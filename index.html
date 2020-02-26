@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular/angular-route.js"></script>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="../node_modules/fontawesome-free-5.12.1-web/css/all.css">
+        <link rel="stylesheet" href="css.css">
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script>
+            var app=angular.module("DemoApp",['ngRoute']);
+            app.config(function($routeProvider){
+                $routeProvider
+                .when('/',{
+                    templateUrl:"home.html"
+                })
+                .when('/home',{
+                    templateUrl:"home.html"
+                })
+                .when('/login',{
+                    templateUrl:'login.html'
+                })
+                .when('/register',{
+                    templateUrl:'register.html'
+                })
+                .when('/service',{
+                    templateUrl:'service.html'
+                })
+                .when('/about',{
+                    templateUrl:'about.html'
+                })
+                .when('/contact',{
+                    templateUrl:'contact.html'
+                })
+                .when('/password',{
+                    templateUrl:'password.html'
+                })
+            })
+            app.controller("IndexController",function($scope){
+
+            })
+        </script>
+    </head>
+    <body ng-app="DemoApp" ng-controller="IndexController">
+        <div class="container-fluid">
+            <!--Site Name-->
+            <div class="siteName ">Naresh -i- Technologies</div>
+            <!--Site Name End-->
+            <!--NavBar Start-->
+            <div class="form-group">
+                <div class="bg-light menuBar">
+                    <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <a href="" class="navbar-brand"></a>
+                                <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mrnuDemo">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </nav>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn" href="#!home"><span><i class="fa fa-home"></i> Home</span></a>
+                            <a class="btn"   href="#!about"><span><i class="fa fa-book"></i> About</span></a>
+                            <a class="btn"   href="#!contact"><span><i class="fa fa-phone"></i> Contact</span></a>
+                        </div>
+                        <div class="btn-group">
+                            <!--Dropdown Start-->
+                            <div class="dropdown" id="dropdownDemo">
+                                <button class="btn btn-light dropdown-toggle "data-toggle="dropdown" data-target="#dropdownDemo"><i class="fa fa-cog"></i> My Account</button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                        <a class="dropdown-item"  href="#!login"><span class="dropdown-item-text"><i class="fa fa-sign-in-alt"></i> Login</span></a>
+                                        <a class="dropdown-item"  href="#!register"><span class="dropdown-item-text"><i class="fa fa-user-plus"></i> Signup</span></a>
+                                        <a class="dropdown-item"  href="#!password"><span class="dropdown-item-text"><i class="fa fa-key"></i> Forgot Password</span></a>
+                                        <a class="dropdown-item"  href=""><span class="dropdown-item-text"><i class="fa fa-cog"></i> Manage Account</span></a>
+                                </div>
+                            </div>
+                        <!--Dropdown end-->
+                    </div>
+                </div>
+            </div>
+            <!--NavBar End-->
+            
+            <ng-view></ng-view>
+
+            <!--Footer Start-->
+            <br>
+            <div class="footer w-100"  > 
+                <h3 class="text-center">Naresh-i-Technologies</h3>
+                <div class="row" style="margin-left: 30%;" >
+                    
+                    <div class="col-xs-12">
+                        <ul>
+                            <li><a href="#!home"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a href="#!about"><i class="fa fa-book"></i> About</a></li>
+                            <li><a href="#!contact"><i class="fa fa-phone"></i> Contact</a></li>
+                            <li><a href="#!service"><i class="fa fa-cog"></i> Services</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12">
+                        <ul>
+                            <li><a href="https://www.facebook.com/nareshit/" target="_blank"><i class ="fa fa-facebook"></i> Facebook</a></li>
+                            <li><a href="https://nareshit.in/course-schedule/" target="_blank"><i class ="fa fa-envelope"></i> Google</a></li>
+                            <li><a href="https://twitter.com/nareshitech?lang=en" target="_blank"><i class ="fa fa-twitter"></i> Twitter</a></li>
+                            <li><a href="https://www.youtube.com/user/nareshtechnologies" target="_blank"><i class ="fa fa-youtube"></i> Youtube</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12">
+                        <ul>
+                            <li><i class="fa fa-address-card" aria-hidden="true"></i><a href = "mailto: info@nareshit.com"> Naresh i Technologies</a></li>
+                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href = "mailto: info@nareshit.com"> info@nareshit.com</a></li>
+                            <li><i class="fa fa-phone-square" aria-hidden="true"></i><a href="phoneto: 9989251552"> 9876543210</a></li>
+                            <li><i class="fa fa-map-marker" aria-hidden="true"></i><span> 2nd Floor, Durga Bhavani Plaza, Ameerpet, Hyderabad</span></li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!--Fotter End-->
+            
+        </div>
+    </body>
+</html>
